@@ -127,7 +127,8 @@ nav ul li a:hover{
 }
 /* hover button */
 .home-cont a:hover{
-    color: black;
+    color: wheat;
+    transform: scale(1.1);
 }
 
 /* 2.home food photos div */
@@ -149,6 +150,16 @@ nav ul li a:hover{
     width: 100px;
     height: 100px;
     border-radius: 100%;
+    /* opacity from 0.0 - 1 */
+    
+}
+.hfood-icon img:hover{
+    /* transform used to scale to big effect */
+    transform: scale(1.4);
+    /* trasnsition used to add transition effect */
+    transition: all 0.4s ease;
+    
+
 }
 
 /* 3.home food cards div */
@@ -209,6 +220,11 @@ nav ul li a:hover{
     text-decoration: none;
     color: black;
 }
+.home-foodcards:hover{
+    transform: scale(1.03);
+}
+
+/* responsive section */
 
 
 
