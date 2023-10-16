@@ -86,13 +86,22 @@ nav ul li a:hover{
 /* --------------------- */
 /* 1.home contents div */
 #home{
-    position: relative;
+    
     height: 100%;
+}
+.home-container{
+    display: grid; 
+    grid-gap: 0px; 
+    grid-template-columns: 60% 40%;
+
 }
 
 .home-cont{
     background-color:#C38154;
-    width: 60%;
+
+
+    grid-column: 1 / 2; 
+    grid-row: 1;
     
 }
 .home-cont h1{
@@ -134,10 +143,13 @@ nav ul li a:hover{
 /* 2.home food photos div */
 .home-foods{
     background-color: #FFC26F;
-    width: 60%;
+    
     align-items: center;
     justify-content: space-evenly;
     display: flex;
+
+    grid-column: 1 ; 
+    grid-row: 2 ;
 }
 .hfood-arrow{
     margin: 70px 20px;
@@ -165,11 +177,13 @@ nav ul li a:hover{
 /* 3.home food cards div */
 .home-cards{
     
-    width: 40%;
-    position: absolute;
-    right: 0;
-    top: 0;
+
+    
+    
     height: 100%;
+
+    grid-column: 2 ; 
+    grid-row: 1 / 3;
      
     
 }
@@ -224,147 +238,330 @@ nav ul li a:hover{
     transform: scale(1.03);
 }
 
-/* responsive section */
-@media screen and (max-width:412px){
+
+
+/* responsive section -----------------------------------------------------*/
+
+/* mobile portrait */
+/* ---------------- */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    #container{
+        height: auto;
+    }
+    .home-container{
+        display: flex; 
+        flex-direction: column;
+    }
+
     /* navigation bar */
     nav{
-        background-color:#884A39;
-        width: 100%;
+    background-color:#884A39;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
     }
+    /* navigation options */
     nav ul li{
-        
-        width: auto;
-        position: unset;
-        margin: 30px 0px;
-        padding-left: 13px;
-        
-
-        
+    display: inline-block;
+    margin: 15px 1px;
     }
     nav ul li a{
-        color: white;
-        font-weight: bold;
-        font-size: 20px;
-        margin: 10px;
-
-        
-    }
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0px 10px;
     
+    }
+    nav ul li a:hover{
+    color:wheat;
+    }
+    .nav-icons{  
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    }
+    .n-icons{
+    width: 30px;
+    height: 30px;
+    border: 2px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px;
+    display: inline-flex;
+    }
+    .n-icons i{
+    color: aliceblue;
+    font-size: 15px;
+    }
+    .n-iconsmenu{
     
-    /*  */
-    #home{
-        position: relative;
-        height: 100%;
+    width: 30px;
+    height: 30px;
+    border: 2px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px;
+    display: inline-flex;
     }
-    .home-cont{
-        background-color:#C38154;
-        width: 100%;
+    .n-iconsmenu a{
+    font-size: 25px;
+    color: white;
     }
+    /* 1.home contents div */
     .home-cont a{
-        border-radius: 25px;
+        border-radius: 20px;
         display: inline-block;
         padding: 20px 10px;
         margin-top: 20px;
         margin-bottom: 30px;
-        margin-left: 30px;
-        font-weight: bold;
+        margin-left: 8%;
     }
-    
-
-    /*  */
-    .home-foods{
-        background-color: #FFC26F;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        
+    /* 2.home food photos div */
+    .hfood-arrow{
+    margin: 50px 0px;
+    font-size: 30px;
     }
     .hfood-icon{
-        margin: 0px 5px;
+    margin: 0px 0px;
     }
-    .hfood-arrow{
-        margin: 70px 10px;
-        font-size: 30px;
+    .hfood-icon img{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    /* opacity from 0.0 - 1 */
     }
-
-    /*  */
-    .home-cards{
-        width: 100%;
-        height: 100%;
-        top: auto;
-        position: unset;
-        padding-bottom: 100px; 
-    }
+    /* 3.home food cards div */
     .home-foodcards{
         background-color: #F9E0BB;
-        margin: 20px 64px;
-        width: 70%;
-        height: 180px;
+        margin: 20px 21%;
+        width: 60%;
+        height: 45%;
         border-radius: 20px;
-        position: relative;
     }
-    .home-foodcards img{
-        position: absolute;
-        top: auto;
-        right: 20px;
-        bottom: 30px;
-        width: 125px;
-        height: 125px;
-        border-radius: 25%;
-    }
-    .home-foodcards h4{
-        padding: 18px 20px;
-        font-size: 30px;
-    }
-    .home-foodcards p{
+    .home-foodcards span{
         font-size: 20px;
-        padding: 0px 20px;
-        line-height: 35px;
+        font-weight: bold;
+        
+    }
     
+}
+
+/* mobile landscape */
+/* ----------------- */
+@media (min-width: 481px) and (max-width: 768px) {
+    #container{
+        height: auto;
+    }
+    .home-container{
+        display: flex; 
+        flex-direction: column;
     }
 
-    /*  */
-    #container{
-    position: relative;
-    
-}
-.nav-icons{  
-    background-color: rgba(245, 222, 179, 0.329);
-    justify-content: center;
-    position: absolute;
-    top: auto;
-    bottom: 0;
+    /* navigation bar */
+    nav{
+    background-color:#884A39;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
-    margin-top: 50px;
-}
-.n-icons{
+    }
+    /* navigation options */
+    nav ul li{
+    display: inline-block;
+    margin: 15px 10px;
+    }
+    nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0px 20px;
+    
+    }
+    .nav-icons{  
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    }
+    .n-icons{
+    width: 30px;
+    height: 30px;
+    border: 2px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 20px;
+    display: inline-flex;
+    }
+    .n-icons i{
+    color: aliceblue;
+    font-size: 15px;
+    }
+    .n-iconsmenu{
+    
+    width: 30px;
+    height: 30px;
+    border: 2px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 20px;
+    display: inline-flex;
+    }
+    .n-iconsmenu a{
+    font-size: 25px;
+    color: white;
+    }
+    /* 1.home contents div */
+    .home-cont a{
+        border-radius: 20px;
+        display: inline-block;
+        padding: 20px 10px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        margin-left: 8%;
+    }
+    /* 2.home food photos div */
+    .hfood-arrow{
+    margin: 50px 0px;
+    font-size: 30px;
+    }
+    .hfood-icon{
+    margin: 0px 0px;
+    }
+    .hfood-icon img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    /* opacity from 0.0 - 1 */
+    }
+    /* 3.home food cards div */
+    .home-foodcards{
+        background-color: #F9E0BB;
+        margin: 20px auto;
+        width: 250px;
+        height: 45%;
+        border-radius: 20px;
+    }
+    .home-foodcards span{
+        font-size: 20px;
+        font-weight: bold;
         
-    width: 50px;
-    height: 50px;
-    
-    margin: 10px 10px;
-    display:flex;
-    
+    }
 
 }
-.n-icons i{
+
+/* tablet portrait */
+/* --------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #container{
+        height: auto;
+    }
+
+    /* navigation bar */
+    nav{
+    background-color:#884A39;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    }
+    /* navigation options */
+    nav ul li{
+    display: inline-block;
+    margin: 15px 20px;
+    }
+    nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0px 30px;
+    
+    }
+    .nav-icons{  
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    }
+    .n-icons{
+    width: 30px;
+    height: 30px;
+    border: 2px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 30px;
+    display: inline-flex;
+    }
+    .n-icons i{
     color: aliceblue;
+    font-size: 15px;
+    }
+    .n-iconsmenu{
+    
+    width: 30px;
+    height: 30px;
+    border: 2px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 30px;
+    display: inline-flex;
+    }
+    .n-iconsmenu a{
     font-size: 25px;
-    margin: 10px;
-    
+    color: white;
+    }
+    /* 1.home contents div */
+    .home-cont h1{
+        padding-left: 5%;
+    }
+    .home-cont p{
+        padding-left: 5%;
+    }
+    .home-cont a{
+        border-radius: 20px;
+        display: inline-block;
+        padding: 20px 10px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        margin-left: 8%;
+    }
+    /* 2.home food photos div */
+    .hfood-arrow{
+    margin: 50px 0px;
+    font-size: 30px;
+    }
+    .hfood-icon{
+    margin: 0px 0px;
+    }
+    .hfood-icon img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    /* opacity from 0.0 - 1 */
+    }
+    /* 3.home food cards div */
+    .home-foodcards{
+        background-color: #F9E0BB;
+        margin: 20px auto;
+        width: 200px;
+        height: 130px;
+        border-radius: 20px;
+    }
+    .home-foodcards span{
+        font-size: 25px;
+        font-weight: bold;
+        
+    }
 }
-.n-iconsmenu{
-    
-    height: 50px;
-    width: 50px;
-    margin: 10px;
-    margin-right: 10px;
-    margin-left: 150px;
-    
-    
-}
-}
+
 
 
 
